@@ -1,19 +1,40 @@
-const api_key = 'b723180eadb010d7d249dd4f132a6bbc';
+const api_key = 'cb690d983d68ef169ff9bbc5201fb01d';
 
 
 console.log('Hello Jee');
 
 async function showWeather() {
-    // let latitude = 15.3333;
-    // let longitudde = 74.0833;
 
-    let city = "goa";
+    try {
+        let latitude = 15.3333;
+        let longitudde = 74.0833;
+
+        let city = "Goa";
 
 
+        const responce = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`);
+        console.log("Responce get");
+    
+        const data = await responce.json();
+        console.log("Converted to JSON");
+    
+        console.log("Weather Data : ", data);
+    
+        let newPara = document.createElement('p');
+        newPara.textContent= ` ${data?.main?.temp.toFixed(2)} °C`;
+        document.body.appendChild(newPara);
+        
+    } catch (error) {
+        console.log(error);   
+    }
+}
 
-    const responce = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`);
+async function getCustomWeather(){
+    let latitude = 15.6333;
+    let longitude = 18.3333;
 
-    const data = await responce.json();
+    let responce = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}`);
+    let data = await responce.json(); 
 
-    console.log("Weather Data : "+ data);
+    console.log(data);   
 }
