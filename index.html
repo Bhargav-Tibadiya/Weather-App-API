@@ -19,8 +19,69 @@
 
         <div class="weather-container">
 
-            <!-- Grant Locatiob -->
+            <!-- Grant Location -->
+            <div class="grant-location-container">
+                <img src="assets/location.png" width="80" height="80" loading="lazy">
+                <p>Grant Location</p>
+                <p>Allow Access to get Weather Info</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>
 
+            <!-- Search -->
+
+            <form action="" class="form-container" data-searchForm>
+                <input type="text" placeholder="Search For City" data-searchInput>
+                <button class="btn">
+                    <img src="assets/search.png" width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!-- loading-screen  -->
+            <div class="loading-cotainer">
+                <img src="assets/loading.gif" width="150" height="150" loading="lazy">
+                <p></p>
+            </div>
+
+            <!-- Show weather info -->
+
+            <div class="user-info-container">
+
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+
+                <p data-weatherDesc></p>
+
+                <img data-weatherIcon>
+
+                <p data-temp></p>
+
+                <div class="parameter-container">
+
+                    <div class="parameter">
+                        <img src="assets/wind.png" alt="">
+                        <p>wind Speed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <div class="parameter">
+                        <img src="assets/humidity.png" alt="">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+                     
+                    <div class="parameter">
+                        <img src="assets/cloud.png" alt="">
+                        <p>Clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+
+
+                </div>
+
+
+            </div>
 
         </div>
 
